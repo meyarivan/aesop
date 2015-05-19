@@ -118,7 +118,7 @@ public class MysqlUtils
 		try
 		{
 			connection = MysqlConnectionProvider.getInstance().getConnection(dbName);
-			String primaryKeyFetchQuery = "SHOW index FROM " + tableName + " WHERE Key_name = 'PRIMARY'";
+			String primaryKeyFetchQuery = "SHOW index FROM `" + tableName + "` WHERE Key_name = 'PRIMARY'";
 			preparedStatement = connection.prepareStatement(primaryKeyFetchQuery);
 			resultSet = preparedStatement.executeQuery();
 			while (resultSet.next())
